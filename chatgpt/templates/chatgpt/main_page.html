@@ -1,0 +1,14 @@
+{% extends 'chatgpt/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="main-page" >
+        <img id="main-page-img" src="{% static 'chatgpt/chatgpt-img.jpg' %}" alt="chatgpt-img">
+        <div class="main-page-text">ChatGPT refers to a chatbot platform that uses the GPT (Generative Pre-trained Transformer) language model to chat with humans through text-based conversations. The GPT model is a deep learning algorithm that is trained on large amounts of data, allowing it to generate human-like responses based on the context of the conversation. ChatGPT bots can be used for a variety of purposes, including customer service, personal assistance, and language learning.
+            <br><br><br>
+            <a class="main-page-button" href="{% url 'chatting_page' %}">Get Start</a>
+        </div>
+    </div><br><br>
+    <hr style="color: white;"> 
+{% endblock %}

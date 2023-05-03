@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'chatgpt/style.css' %}">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+
+            <header >
+                <!-- <div class="logo"> -->
+                    <a href="{% url 'main_page'%}"><img src="{% static 'chatgpt/chatgpt-icon.webp' %}" alt="chatgpt-icon"></a>
+                    <h1 >ChatGPT</h1>
+                <!-- </div> -->
+                {% if user.is_authenticated %}
+                <div class="logo">
+                    
+                        <a href="{% url 'userprofile' %}"><img class="user-profile-image" src="media/{{user.image}}" alt="profile-img"></a>
+                        <a class="user-buttons" href="{% url 'logout' %}">Log out</a>
+                        <!-- <h5>{{user.username}}</h5> -->
+                    
+                    <!-- <h5>LogOUT</h5> -->
+                </div>
+                {% else %}
+                <a class="user-buttons" href="{% url 'login' %}">Log in</a>
+                {% endif %}
+            </header>
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
+            <!-- <footer>
+                footer
+            </footer> -->
+    </div>
+</body>
+</html>

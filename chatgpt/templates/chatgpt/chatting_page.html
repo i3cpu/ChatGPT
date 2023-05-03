@@ -1,0 +1,17 @@
+{% extends 'chatgpt/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="chatting-page-block">
+    <div class="chat-block">
+         <p class="question"> {{question}}</p>
+         <p class="answer"> {{answer}}</p>
+    </div>
+
+    <form class="message-form" action="" method="GET">
+        <input class="chatting-input" type="text" name="message" placeholder="Send message"  >
+        <button  class="chatting-button" type="submit" >Send</button>
+    </form>
+</div>
+{% endblock %}
